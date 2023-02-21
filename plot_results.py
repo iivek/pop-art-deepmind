@@ -2,32 +2,32 @@ import pickle
 import matplotlib.pyplot as plt
 
 
-with open("./results/sgd_lr=-2.5_beta=0.pkl", "rb") as f:
+with open("results/sgd_lr=-2.5_beta=0.pkl", "rb") as f:
     samples = pickle.load(f)
     m = pickle.load(f)
     l = pickle.load(f)
     u = pickle.load(f)
 
-with open("./results/art_lr=-2.5_beta=-0.5.pkl", "rb") as f:
+with open("results/art_lr=-2.5_beta=-0.5.pkl", "rb") as f:
     samples_ = pickle.load(f)
     m_ = pickle.load(f)
     l_ = pickle.load(f)
     u_ = pickle.load(f)
 
-with open("./results/pop-art_lr=-2.5_beta=-0.5.pkl", "rb") as f:
+with open("results/pop-art_lr=-2.5_beta=-0.5.pkl", "rb") as f:
     samples__ = pickle.load(f)
     m__ = pickle.load(f)
     l__ = pickle.load(f)
     u__ = pickle.load(f)
 
-with open("./results/normalized-sgd_lr=-2.5_beta=-0.5.pkl", "rb") as f:
+with open("results/normalized-sgd_lr=-2.5_beta=-0.5.pkl", "rb") as f:
     samples___ = pickle.load(f)
     m___ = pickle.load(f)
     l___ = pickle.load(f)
     u___ = pickle.load(f)
 
 # Comparison plot
-fig, spls = plt.subplots(2, 1, figsize=(12, 16))
+fig, spls = plt.subplots(2, 1, figsize=(6, 8))
 spl = spls[0]
 
 spl.plot(samples__, m__, color="C2", label="PopArt")

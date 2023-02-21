@@ -3,12 +3,12 @@ import torch
 import time
 import argparse
 
-from dataset_generator import generate_dataset
+from utils.dataset_generator import generate_dataset
 from learners.model import Model
 from learners.normalized_sgd import NormalizedSGD
 from learners.pop_art_sgd import PopArtSGD, ArtSGD
 from learners.vanilla_sgd import VanillaSGD
-from utils import moving_average, median_and_percentile, save_results
+from utils.utils import moving_average, median_and_percentile, save_results
 
 
 # parser settings
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     mode = args.mode
 
     rmses = []
-    for seed in range(25):
+    for seed in range(50):
         print("Running seed {:d}.".format(seed))
         torch.manual_seed(seed)
         learner = spawn_learner(lr, beta, mode)
